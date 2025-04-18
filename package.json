@@ -1,14 +1,27 @@
 {
   "name": "flex-data-keep",
+  "description": "Web application for store of the flex data values",
   "version": "0.0.0",
+  "license": "MIT",
+  "author": "Oleksandr Aleksieiev",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:aleksieiev-o/flex-data-keep.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aleksieiev-o/flex-data-keep/issues"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "ng lint",
+    "lint-fix": "ng lint --fix",
+    "prepare": "husky"
   },
-  "private": true,
   "dependencies": {
     "@angular/common": "^19.2.0",
     "@angular/compiler": "^19.2.0",
@@ -26,12 +39,21 @@
     "@angular/cli": "^19.2.8",
     "@angular/compiler-cli": "^19.2.0",
     "@types/jasmine": "~5.1.0",
+    "angular-eslint": "^19.3.0",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "husky": "^9.1.7",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.7.2"
+    "prettier": "^3.5.3",
+    "prettier-eslint": "^16.4.1",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.27.0"
   }
 }

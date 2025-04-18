@@ -1,6 +1,17 @@
-# FlexDataKeep
+# Flex Data Keep
+
+Web application for store of the flex data values
+
+#### Technologies stack
+
+- TypeScript
+- Angular
+- Tailwind CSS
+- Firebase
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
+
+---
 
 ## Development server
 
