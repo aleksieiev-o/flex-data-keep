@@ -15,11 +15,17 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "fb-em-start": "firebase emulators:start",
+    "fb-em-start-import-db": "firebase emulators:start --import ./src/lib/firebase/seed.development",
+    "fb-em-export-db": "firebase emulators:export ./src/lib/firebase/seed.development",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
     "lint-fix": "ng lint --fix",
+    "inc-ver-patch": "./bump-version.sh patch",
+    "inc-ver-minor": "./bump-version.sh minor",
+    "inc-ver-major": "./bump-version.sh major",
     "prepare": "husky"
   },
   "dependencies": {
