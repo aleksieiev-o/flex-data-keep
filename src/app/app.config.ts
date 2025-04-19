@@ -1,4 +1,8 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import {
+  ApplicationConfig,
+  isDevMode,
+  provideZoneChangeDetection,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -8,6 +12,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { getStorage, provideStorage } from '@angular/fire/storage';
+import { firebaseEnvironmentSchemaDev } from '../environments/environment.development';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,16 +21,11 @@ export const appConfig: ApplicationConfig = {
     provideStore(),
     provideEffects(),
     provideFirebaseApp(() =>
-      initializeApp({
-        projectId: 'data-meter-keep-d7da6',
-        appId: '1:108837005103:web:5873852ccb912e4e7f63da',
-        databaseURL:
-          'https://data-meter-keep-d7da6-default-rtdb.europe-west1.firebasedatabase.app',
-        storageBucket: 'data-meter-keep-d7da6.appspot.com',
-        apiKey: 'AIzaSyAqvFa0qcusDbqfuftu4-R31Y_eT4Xi9_w',
-        authDomain: 'data-meter-keep-d7da6.firebaseapp.com',
-        messagingSenderId: '108837005103',
-      }),
+      initializeApp(
+        isDevMode()
+          ? firebaseEnvironmentSchemaDev
+          : firebaseEnvironmentSchemaDev, // TODO add hier firebaseEnvironmentSchemaProd
+      ),
     ),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
